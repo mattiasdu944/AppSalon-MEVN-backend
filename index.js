@@ -4,10 +4,11 @@ import dotenv from "dotenv";
 import servicesRoutes from "./routes/service.routes.js";
 
 dotenv.config();
+
 const app = express();
 
+app.use(express.json())
 app.use('/api', servicesRoutes)
-
 
 const PORT = process.env.PORT || 4000;
 
