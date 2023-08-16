@@ -1,0 +1,11 @@
+services:
+  appsalondb:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: mongo:5.0.0
+    container_name: appsalon-database
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo:/data/db

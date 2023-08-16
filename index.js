@@ -1,11 +1,12 @@
 import express from "express";
-import routes from "./routes/routes.js";
+import dotenv from "dotenv";
 
+import servicesRoutes from "./routes/service.routes.js";
+
+dotenv.config();
 const app = express();
 
-
-app.use('/api', routes)
-
+app.use('/api', servicesRoutes)
 
 
 const PORT = process.env.PORT || 4000;
