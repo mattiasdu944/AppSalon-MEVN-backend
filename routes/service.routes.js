@@ -3,10 +3,14 @@ import { createService, deleteOneService, getAllServices, getServiceById, update
 
 const router = express.Router();
 
-router.get('/services', getAllServices)
-router.get('/services/:id', getServiceById)
-router.post('/services', createService)
-router.put('/services/:id', updateServiceById)
-router.delete('/services/:id', deleteOneService)
+router.route('/services')
+    .get(getAllServices)
+    .post(createService);
+
+router.route('/services/:id')
+    .get(getServiceById)
+    .put(updateServiceById)
+    .delete(deleteOneService);
+
 
 export default router;
